@@ -15,11 +15,11 @@ s = vt - 1/2 at^2
     a (acceleration)
     t (time taken)
     
-    YOUR ANSWER: """); dn_calc = readline()
+    YOUR ANSWER: """); dd_calc = readline()
     
-    # rearrange equations to calculate user chosen variable
+    #= dd_calc = (user) decided; no displacement; calculation =#    
     
-    if dn_calc == "v" # final velocity
+    if dd_calc == "v" # final velocity
         # v = u + (a * t)
         print("\nvalue for initial velocity: "); u = parse(Float64, readline())
         print("value for acceleration: "); a = parse(Float64, readline())
@@ -28,7 +28,7 @@ s = vt - 1/2 at^2
         v = u + (a * t)
         println("The final velocity is ", v)
     
-    elseif dn_calc == "u" # initial velocity
+    elseif dd_calc == "u" # initial velocity
         # u = v - (a * t)
         print("\nvalue for final velocity: "); v = parse(Float64, readline())
         print("value for acceleration: "); a = parse(Float64, readline())
@@ -37,7 +37,7 @@ s = vt - 1/2 at^2
         u = v - (a * t)
         println("The initial velocity is ", u)
     
-    elseif dn_calc == "a" # acceleration
+    elseif dd_calc == "a" # acceleration
         # a = (v - u) / t
         print("\nvalue for final velocity: "); v = parse(Float64, readline())
         print("value for initial velocity: "); u = parse(Float64, readline())
@@ -46,7 +46,7 @@ s = vt - 1/2 at^2
         a = (v - u) / t
         println("The acceleration is ", a)
     
-    elseif dn_calc == "t" # time taken
+    elseif dd_calc == "t" # time taken
         # t = (v - u) / a
         print("\nvalue for final velocity: "); u = parse(Float64, readline())
         print("value for initial velocity: "); v = parse(Float64, readline())
@@ -60,7 +60,55 @@ s = vt - 1/2 at^2
 end
 
 #= u =# function initialNONE()
-    # s = (v*t) - 0.5(a * t^2)
+    print("""\nWhat are you trying to calculate?
+    
+    s (displacement)
+    v (final velocity)
+    a (acceleration)
+    t (time taken)
+    
+    YOUR ANSWER: """); di_calc = readline()
+    
+    #= di_calc = (user) decided; no initial velocity; calculation =#
+    
+    if di_calc == "s" # displacement
+        # s = (v*t) - 0.5(a * t^2)
+        print("\nvalue for final velocity: "); vIN = parse(Float64, readline())
+        print("value for time: "); tIN = parse(Float64, readline())
+        print("value for acceleration: "); aIN = parse(Float64, readline())
+
+        sIN = (vIN * tIN) - (0.5 * (aIN * tIN^2))
+        println("The displacement is ", sIN)
+    
+    elseif di_calc == "v" # final velocity
+        # v = (s / t) + 0.5(a * t)
+        print("\nvalue for displacement: "); sIN = parse(Float64, readline())
+        print("value for time: "); tIN = parse(Float64, readline())
+        print("value for acceleration: "); aIN = parse(Float64, readline())
+
+        vIN = (sIN / tIN) + (0.5 *(aIN * tIN))
+        println("The final velocity is ", vIN)
+    
+    elseif di_calc == "a" # acceleration
+        # a = 2(vt - s) / t^2
+        print("\nvalue for final velocity: "); vIN = parse(Float64, readline())
+        print("value for time: "); tIN = parse(Float64, readline())
+        print("value for displacement: "); sIN = parse(Float64, readline())
+
+        aIN = 2 * ((vIN * tIN) - sIN) / tIN^2
+        println("The acceleration is ", aIN)
+    
+    elseif da_calc == "t" # time taken
+        # t = (v + root(v^2 - 2 * a * s)) / a
+        print("\nvalue for final velocity: "); vIN = parse(Float64, readline())
+        print("value for acceleration: "); aIN = parse(Float64, readline())
+        print("value for displacement: "); sIN = parse(Float64, readline())
+
+        tIN = (vIN + sqrt((vIN^2) - (2 * aIN * sIN))) / aIN
+        println("The time taken is ", tIN)
+    else # other input
+        println("...what?")
+    end
 end
 
 #= v =# function finalNONE()
@@ -78,7 +126,7 @@ end
     
     YOUR ANSWER: """); da_calc = readline()
     
-    # rearrange equations to calculate user chosen variable
+    #= da_calc = (user) decided; no acceleration; calculation =#
     
     if da_calc == "s" # displacement
         # s = 0.5(u + v)t
@@ -122,6 +170,55 @@ end
 
 #= t =# function timeNONE()
     # v^2 = u^2 + 2 * a * s
+    print("""\nWhat are you trying to calculate?
+    
+    s (displacement)
+    u (initial velocity)
+    v (final velocity)
+    a (acceleration)
+    
+    YOUR ANSWER: """); dt_calc = readline()
+    
+    #= dt_calc = (user) decided; no time; calculation =#
+    
+    if dt_calc == "v" # final velocity
+        # v = root(u^2 + 2 * a * s)
+        print("\nvalue for initial velocity: "); uTN = parse(Float64, readline())
+        print("value for acceleration: "); aTN = parse(Float64, readline())
+        print("value for displacement: "); sTN = parse(Float64, readline())
+
+        vTN = sqrt((uTN ^ 2) + (2 * aTN * sTN))
+        println("The final velocity is (plus or minus) ", vTN)
+    
+    elseif dt_calc == "u" # initial velocity
+        # u = root (v^2 - 2 * a * s)
+        print("\nvalue for final velocity: "); vTN = parse(Float64, readline())
+        print("value for acceleration: "); aTN = parse(Float64, readline())
+        print("value for displacement: "); sTN = parse(Float64, readline())
+
+        uTN = sqrt((vTN ^ 2) - (2 * aTN * sTN))
+        println("The initial velocity is (plus or minus) ", uTN)
+    
+    elseif dt_calc == "a" # acceleration
+        # a = (v^2 - u^2) / (2 * s)
+        print("\nvalue for final velocity: "); vTN = parse(Float64, readline())
+        print("value for initial velocity: "); uTN = parse(Float64, readline())
+        print("value for displacement: "); sTN = parse(Float64, readline())
+
+        aTN = (((vTN ^ 2) - (uTN ^ 2)) / (2 * sTN))
+        println("The acceleration is ", aTN)
+    
+    elseif dt_calc == "s" # displacement
+        # s = (v^2 - u^2) / 2a
+        print("\nvalue for final velocity: "); vTN = parse(Float64, readline())
+        print("value for initial velocity: "); uTN = parse(Float64, readline())
+        print("value for acceleration: "); aTN = parse(Float64, readline())
+
+        sTN = (((vTN ^ 2) - (uTN ^ 2)) / (2 * aTN))
+        println("The displacement is ", sTN)
+    else # other input
+        println("...what?")
+    end
 end
 
 # nice polite welcome :)
