@@ -112,7 +112,47 @@ end
 end
 
 #= v =# function finalNONE()
-    # s = (u*t) - 0.5(a * t^2)
+    # s = (u*t) + 0.5(a * t^2)
+
+    print("""\nWhat are you trying to calculate?
+    
+    s (displacement)
+    u (initial velocity)
+    a (acceleration)
+    t (time taken)
+    
+    YOUR ANSWER: """); df_calc = readline()
+
+    #= df_calc = (user) decided; no final velocity; calculation =#
+
+    if df_calc == "s"
+        print("\nvalue for initial velocity: "); uFN = parse(Float64, readline())
+        print("value for time: "); tFN = parse(Float64, readline())
+        print("value for acceleration: "); aFN = parse(Float64, readline())
+
+        sFN = (uFN * tFN) + (0.5 * aFN * tFN^2)
+        println("The displacement is ", sFN)
+    elseif df_calc == "u"
+        print("\nvalue for displacement: "); sFN = parse(Float64, readline())
+        print("value for time: "); tFN = parse(Float64, readline())
+        print("value for acceleration: "); aFN = parse(Float64, readline())
+
+        uFN = (sFN / tFN) / (0.5 * aFN * tFN)
+        println("The initial velocity is ", uFN)
+    elseif df_calc == "a"
+        print("\nvalue for displacement: "); sFN = parse(Float64, readline())
+        print("value for initial velocity: "); uFN = parse(Float64, readline())
+        print("value for time: "); tFN = parse(Float64, readline())
+
+        aFN = (2 * (sFN - (uFN * tFN))) / tFN^2
+        println("The acceleration is: ", aFN)
+    elseif df_calc == "t"
+        print("\nvalue for initial velocity: "); uFN = parse(Float64, readline())
+        print("value for acceleration: "); aFN = parse(Float64, readline())
+        print("value for displacement: "); sFN = parse(Float64, readline())
+
+        tFN = (-UFN + sqrt(uFN^2 + (2*aFN*sFN))) / aFN
+        println("The time taken is ", tFN)
 end
 
 #= a =# function accelerateNONE()
