@@ -1,4 +1,4 @@
-# SUVAT calculator (aka. suvat-calc) -> WORK IN PROGRESS
+# SUVAT calculator (aka. suvat-calc)
 I'd love to make this a thing that you can run as a command in your terminal. I need to figure out how the hell that works. But anyway - read on.
 
 This is my first ever major project written entirely in Julia, which is what made the creation of this feel more exciting for me!
