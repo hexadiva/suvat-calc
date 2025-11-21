@@ -151,8 +151,11 @@ end
         print("value for acceleration: "); aFN = parse(Float64, readline())
         print("value for displacement: "); sFN = parse(Float64, readline())
 
-        tFN = (-UFN + sqrt(uFN^2 + (2*aFN*sFN))) / aFN
+        tFN = (-uFN + sqrt(uFN^2 + (2*aFN*sFN))) / aFN
         println("The time taken is ", tFN)
+    else
+        print("...what?")
+    end
 end
 
 #= a =# function accelerateNONE()
@@ -285,6 +288,4 @@ elseif var_none == "a"
     accelerateNONE()
 elseif var_none == "t"
     timeNONE()
-else
-    println("One of these has to be unknown, dude!")
 end
