@@ -1,8 +1,6 @@
 # SUVAT calculator (aka. suvat-calc)
-I'd love to make this a thing that you can run as a command in your terminal. I need to figure out how the hell that works. But anyway - read on.
-
 This is my first ever major project written entirely in Julia, which is what made the creation of this feel more exciting for me!
-I decided to make a calculator project, but not a basic one. Instead, one that uses the 5 equations that link __displacement__ (s), __initial velocity__ (u), __final velocity__ (v), __acceleration__ (a), and __time__ (t) together. Physicists, you know exactly what I'm talking about.
+I decided to make a calculator project, one that uses the 5 equations that link __displacement__ (s), __initial velocity__ (u), __final velocity__ (v), __acceleration__ (a), and __time__ (t) together. Physicists, you know exactly what I'm talking about.
 
 ## The 5 SUVAT equations
 1. v = u + at
@@ -12,8 +10,6 @@ I decided to make a calculator project, but not a basic one. Instead, one that u
 5. s = vt - 1/2 at^2
 
 ## How does this work?
-The process of this is, trust me, supposed to be very simple.
-
 Each equation focuses on four of the variables mentioned earlier. In order to figure out which equation the user should use, they are first asked which variable they do not know the value of.
 
 Once they state this, they are then asked which one of the variables remaining they wish to calculate. Depending on which variable they choose, the equation will then be rearranged to find that.
