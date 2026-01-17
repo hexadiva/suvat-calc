@@ -10,6 +10,8 @@ I decided to make a calculator project, one that uses the 5 equations that link 
 5. s = vt - 1/2 at^2
 
 ## How does this work?
+![suvat-calc](EXAMPLE-hexadiva-suvatcalc.jpg)
+
 Each equation focuses on four of the variables mentioned earlier. In order to figure out which equation the user should use, they are first asked which variable they do not know the value of.
 
 Once they state this, they are then asked which one of the variables remaining they wish to calculate. Depending on which variable they choose, the equation will then be rearranged to find that.
